@@ -10,8 +10,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <h3 align="center">Spotify Logger</h3>
-
+  <h2 align="center">Spotify Logger</h2>
   <p align="center">
     <a href="https://github.com/RobertFrig/Spotify-Logger/issues">Report Bug</a>
     ·
@@ -77,7 +76,7 @@ Uage
 
 Robert Frigerio - [@RobertFrigerio](https://twitter.com/RobertFrigerio) - robertfrigerio@gmail.com
 
-Project Link: [https://github.com/RobertFrig/Spotify-logger](https://github.com/RobertFrig/Spotify-logger)
+Project Link: [https://github.com/RobertFrig/Spotify-Logger](https://github.com/RobertFrig/Spotify-Logger)
 
 <!-- ACKNOWLEDGEMENTS -->
 
