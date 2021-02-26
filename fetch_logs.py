@@ -9,7 +9,7 @@ def check_date(t):
     log_file = open('./logs/completed_dates.txt', 'r')
     first_line = log_file.readline()
     date_from_file = first_line.split(";")[:-1][-1]
-    # if date already in file, script will not execute), returns True
+    # if date already in file, script will not execute, returns True
     return date_from_file == t
 
 

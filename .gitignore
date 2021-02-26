@@ -1,0 +1,5 @@
+/logs
+/testing
+/.vscode
+/__pycache__
+.cache
