@@ -75,7 +75,7 @@ Uage
 
 ## Contact
 
-Your Name - [@RobertFrigerio](https://twitter.com/RobertFrigerio) - robertfrigerio@gmail.com
+Robert Frigerio - [@RobertFrigerio](https://twitter.com/RobertFrigerio) - robertfrigerio@gmail.com
 
 Project Link: [https://github.com/RobertFrig/Spotify-logger](https://github.com/RobertFrig/Spotify-logger)
 
