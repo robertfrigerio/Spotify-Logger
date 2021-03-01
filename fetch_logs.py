@@ -3,6 +3,7 @@ from spotipy.oauth2 import SpotifyOAuth
 import datetime
 import helpers
 import os
+from dotenv import load_dotenv
 
 
 def check_date(t):
@@ -14,6 +15,7 @@ def check_date(t):
 
 
 def setup():
+    load_dotenv()
     try:
         os.makedirs("./logs/id/")
         os.mkdir("./logs/verbose")
@@ -28,7 +30,8 @@ def setup():
 if __name__ == "__main__":
     TODAY = str(datetime.date.today())
     if check_date(TODAY):
-        print("Script already run today\t", TODAY, "\tTerminating script...")
+        print("Logs already contain data for today\t", TODAY,
+              "\nTerminating...")
         exit()
     scope, sp, frames = setup()
     for frame in frames:
