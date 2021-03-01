@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 def check_date(t):
     log_file = open('./logs/completed_dates.txt', 'r')
     first_line = log_file.readline()
-    date_from_file = first_line.split(";")[:-1][-1]
+    date_from_file = first_line.split(",")[:-1][-1]
     # if date already in file, script will not execute, returns True
     return date_from_file == t
 
@@ -28,9 +28,9 @@ def setup():
 
 
 if __name__ == "__main__":
-    TODAY = str(datetime.date.today())
+    TODAY = str(datetime.date.today())[2:].replace("-", "")
     if check_date(TODAY):
-        print("Logs already contain data for today\t", TODAY,
+        print("Logs already contain data for", helpers.format_date(TODAY),
               "\nTerminating...")
         exit()
     scope, sp, frames = setup()
@@ -43,17 +43,17 @@ if __name__ == "__main__":
         song_ids = helpers.items_to_ids(t_list)
         artist_ids = helpers.items_to_ids(a_list)
 
-        id_t_res = TODAY + "|"
-        for i, song in enumerate(song_ids):
-            id_t_res += str(i + 1) + ";" + song + "|"
+        id_t_res = TODAY + ","
+        for song in song_ids:
+            id_t_res += song + ","
         id_t_res += "\n"
         id_f_t = open("./logs/id/{}_tracks_ids.txt".format(frame), "a")
         id_f_t.write(id_t_res)
         id_f_t.close()
 
-        id_a_res = TODAY + "|"
-        for i, artist in enumerate(artist_ids):
-            id_a_res += str(i + 1) + ";" + artist + "|"
+        id_a_res = TODAY + ","
+        for artist in artist_ids:
+            id_a_res += artist + ","
         id_a_res += "\n"
         id_f_a = open("./logs/id/{}_artists_ids.txt".format(frame), "a")
         id_f_a.write(id_a_res)
@@ -79,5 +79,5 @@ if __name__ == "__main__":
         v_f_a.write(v_a_res)
         v_f_a.close()
     with open('./logs/completed_dates.txt', "a") as d:
-        d.write(TODAY + ";")
-    print("Successfully updated all logs\t", TODAY)
+        d.write(TODAY + ",")
+    print("Successfully updated all logs\t", helpers.format_date(TODAY))
