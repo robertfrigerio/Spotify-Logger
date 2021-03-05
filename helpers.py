@@ -31,6 +31,10 @@ def items_to_artists(i):
     return artist_list
 
 
+def get_date():
+    return str(datetime.date.today())[2:].replace("-", "")
+
+
 def format_date(original):
     MONTHS = {
         "01": "January",
